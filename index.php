@@ -241,6 +241,4 @@
 		</div>
 	</seccion>
 	
-
-	prueba
 <?php include_once 'includes/templates/footer.php'; ?>
