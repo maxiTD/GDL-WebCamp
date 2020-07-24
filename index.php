@@ -208,7 +208,7 @@
 					<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque repellendus distinctio iste nobis
 						nulla. Quia assumenda reprehenderit, laudantium enim placeat voluptas ad deserunt eveniet illum
 						delectus! Facere quis praesentium aspernatur.</p>
-					<footer class="info-testimonial clearfix">						
+					<footer class="info-testimonial clearfix">
 						<img src="../GDL_WebCamp/img/testimonial.jpg" alt="Imagen Testimonial">
 						<cite>Oswaldo Aponte Escobedo<span>Diseñador en @prisma</span> </cite>
 					</footer>
@@ -240,5 +240,5 @@
 			</ul>
 		</div>
 	</seccion>
-	
+
 <?php include_once 'includes/templates/footer.php'; ?>

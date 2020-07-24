@@ -15,9 +15,9 @@
 	<link rel="stylesheet" href="css/all.min.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans&display=swap">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css">
-	<?php 
-		$archivo = basename($_SERVER['PHP_SELF']); //asigna a la variable el nombre del archivo actual
-		$pagina = str_replace(".php", "", $archivo); //busca la cadena ".php y lo reemplaza con nada, desde la fuete $archivo; eso se asigna a la variable $pagina"
+	<?php
+		$archivo = basename($_SERVER['PHP_SELF']);
+		$pagina = str_replace(".php", "", $archivo);
 		if ($pagina == 'invitados' || $pagina == 'index'){
 			echo '<link rel="stylesheet" href="css/colorbox.css">';
 		} else if ($pagina == 'conferencia'){
@@ -30,9 +30,6 @@
 </head>
 
 <body class="<?php echo $pagina;?>">
-	<!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-  <![endif]-->
 
 	<!-- Add your site or application content here -->
 

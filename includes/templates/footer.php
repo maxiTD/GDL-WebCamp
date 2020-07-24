@@ -75,16 +75,16 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-        <script src="js/vendor/jquery-3.4.1.min.js">
+        <script src="js/vendor/jquery-3.4.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 	    <script src="js/lightbox.js"></script>
         <script src="js/jquery.animateNumber.min.js"></script>
         <script src="js/jquery.countdown.min.js"></script>
         <script src="js/jquery.lettering.js"></script>
-        <?php 
-            $archivo = basename($_SERVER['PHP_SELF']); //asigna a la variable el nombre del archivo actual
-            $pagina = str_replace(".php", "", $archivo); //busca la cadena ".php y lo reemplaza con nada, desde la fuete $archivo; eso se asigna a la variable $pagina"
+        <?php
+            $archivo = basename($_SERVER['PHP_SELF']);
+            $pagina = str_replace(".php", "", $archivo);
             if ($pagina == 'invitados' || $pagina == 'index'){
                 echo '<script src="js/jquery.colorbox-min.js"></script>';
             } else if ($pagina == 'conferencia'){
@@ -101,12 +101,12 @@
         <script src="https://www.google-analytics.com/analytics.js" async></script>
 
         <!--Mailchimp pop-up formulario-->
-        <?php 
-            $archivo = basename($_SERVER['PHP_SELF']); //asigna a la variable el nombre del archivo actual
-            $pagina = str_replace(".php", "", $archivo); //busca la cadena ".php y lo reemplaza con nada, desde la fuete $archivo; eso se asigna a la variable $pagina"
+        <?php
+            $archivo = basename($_SERVER['PHP_SELF']);
+            $pagina = str_replace(".php", "", $archivo);
             if ($pagina == 'index'){
                 echo '<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script>
-                <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"1b396151cdd234650f44a110b","lid":"8e6e4ad11a","uniqueMethods":true}) })</script>';   
+                <script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"1b396151cdd234650f44a110b","lid":"8e6e4ad11a","uniqueMethods":true}) })</script>';
             }
 	    ?>
 

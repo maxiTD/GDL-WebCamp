@@ -16,7 +16,6 @@
             } catch (\Exception $e) {
                 echo $e->getMessage();
             }
-            
         ?>
 
         <div class="calendario clearfix">
@@ -34,15 +33,14 @@
                         'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
                     );
                     $calendario[$fecha][] = $evento;
-                } //fin while fetch_assoc ?>
+                }?>
 
                 <?php 
-                    //Imrime todos los eventos                
+                    //Imrime todos los eventos
                     foreach ($calendario as $dia => $lista_eventos) { ?>
                         <h3>
-                        <!--la etiqueta i es codigo de font awesome-->
                         <i class="far fa-calendar-alt"></i>
-                        <?php 
+                        <?php
                             //seteo el idioma para que la fecha se muestre en español
                             //linux
                             setlocale(LC_TIME, 'es_ES.UTF-8');
@@ -50,7 +48,7 @@
                             setlocale(LC_TIME, 'spanish');
                             //doy formato a la fecha
                             echo strftime("%A, %d de %B del %Y", strtotime($dia)); ?>
-                        </h3>    
+                        </h3>
                         <?php foreach($lista_eventos as $evento) { ?>
                             <div class="dia">
                                 <p class="titulo"> <?php echo $evento['titulo']; ?> </p>

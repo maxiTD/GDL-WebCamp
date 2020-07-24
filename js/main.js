@@ -76,7 +76,7 @@
                      errorDiv.style.display = 'block';
                      errorDiv.innerHTML = "Ingresa un email válido";
                      this.style.border = '1px solid red';
-                     errorDiv.style.border = '1px solid red';    
+                     errorDiv.style.border = '1px solid red';
                  }
              }
 
@@ -86,7 +86,7 @@
                      alert("Debes elegir un regalo");
                      regalo.focus();
                  } else {
-                     var boletosDia = parseInt(paseDia.value, 10) || 0, //parseIn(A,B) "castea" el valor de A, a un                                                    nro de base B, es este caso 10(decimal).
+                     var boletosDia = parseInt(paseDia.value, 10) || 0,
                          boletosDosDias = parseInt(paseDosDias.value, 10) || 0,
                          boletosCompleto = parseInt(paseCompleto.value, 10) || 0,
                          cantCamisas = parseInt(camisas.value, 10) || 0,
@@ -99,7 +99,7 @@
                      }
                      if(boletosDosDias > 0){
                          listadoProductos.push(boletosDosDias + ' Pases por dos días');
-                     }              
+                     }
                      if(boletosCompleto > 0){
                          listadoProductos.push(boletosCompleto + ' Pases completos');
                      }
@@ -115,7 +115,7 @@
                          listaProductos.innerHTML += listadoProductos[i] + '</br>';
                      }
 
-                     suma.innerHTML = '$ ' + totalPagar.toFixed(2); //toFixed(N) corta el float a los N decimales
+                     suma.innerHTML = '$ ' + totalPagar.toFixed(2);
 
                      botonRegistro.disabled = false;
                      document.getElementById('total_pedido').value = totalPagar;
@@ -155,7 +155,7 @@
 
          //Menu Fijo
          var windowHeigth = $(window).height();
-         var barraAltura = $('.barra').innerHeight();      
+         var barraAltura = $('.barra').innerHeight();
          $(window).scroll(function(){
              var scroll = $(window).scrollTop();
              if (scroll > windowHeigth){
@@ -165,13 +165,13 @@
                  $('.barra').removeClass('fixed');
                  $('body').css({'margin-top': '0px'});
              }
-         });  
+         });
 
          //Menu Responsive
          $('.menu-movil').on('click', function(){
              $('.navegacion-principal').slideToggle();
          });
-        
+
          //Programa de conferencias
          $('.ocultar').hide();
          $('.programa-evento .info-curso:first').show();
