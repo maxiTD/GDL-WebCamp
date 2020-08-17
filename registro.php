@@ -2,7 +2,7 @@
 
     <section class="seccion contenedor clearfix">
         <h2>Registro de Usuarios</h2>
-        <form id="registro" class="registro" action="validar_registro.php" method="post">
+        <form id="registro" class="registro" action="pagar.php" method="post">
             <div id="datos_usuario" class="registro caja clearfix">
                 <div class="campo">
                     <label for="nombre">Nombre:</label>
@@ -35,7 +35,8 @@
                             </ul>
                             <div class="orden">
                                 <label for="pase_dia">Boletos deseados:</label>
-                                <input type="number" min="0" id="pase_dia" size="3" name="boletos[]" placeholder="0">
+                                <input type="number" min="0" id="pase_dia" size="3" name="boletos[un_dia][cantidad]" placeholder="0">
+                                <input type="hidden" value="30" name="boletos[un_dia][precio]">
                             </div>
                         </div>
                         <!--tabla-precio-->
@@ -51,7 +52,8 @@
                                 <li><i class="fas fa-check"></i>Todos los talleres</li>
                             </ul>
                             <label for="pase_completo">Boletos deseados:</label>
-                            <input type="number" min="0" id="pase_completo" size="3" name="boletos[]" placeholder="0">
+                            <input type="number" min="0" id="pase_completo" size="3" name="boletos[completo][cantidad]" placeholder="0">
+                            <input type="hidden" value="50" name="boletos[completo][precio]">
                         </div>
                         <!--tabla-precio-->
                     </li>
@@ -66,7 +68,8 @@
                                 <li><i class="fas fa-check"></i>Todos los talleres</li>
                             </ul>
                             <label for="pase_dos_dias">Boletos deseados:</label>
-                            <input type="number" min="0" id="pase_dos_dias" size="3" name="boletos[]" placeholder="0">
+                            <input type="number" min="0" id="pase_dos_dias" size="3" name="boletos[2dias][cantidad]" placeholder="0">
+                            <input type="hidden" value="45" name="boletos[2dias][precio]">
                         </div>
                         <!--tabla-precio-->
                     </li>
@@ -199,14 +202,16 @@
                     <div class="extras">
                         <div class="orden">
                             <label for="camisa_evento">Camisa del evento $10 <small>(promoción 7% dto.)</small></label>
-                            <input type="number" min="0" id="camisa_evento" name="pedido_camisas" size="3" placeholder="0">
+                            <input type="number" min="0" id="camisa_evento" name="pedido_extra[camisas][cantidad]" size="3" placeholder="0">
+                            <input type="hidden" value="10" name="pedido_extra[camisas][precio]">
                         </div>
                         <!--oreden-->
 
                         <div class="orden">
                             <label for="etiquetas">Paquete de 10 etiquetas $2 <small>(HTML5, CSS3, JavaScript,
                                     Chrome)</small></label>
-                            <input type="number" min="0" id="etiquetas" name="pedido_etiquetas"size="3" placeholder="0">
+                            <input type="number" min="0" id="etiquetas" name="pedido_extra[etiquetas][cantidad]"size="3" placeholder="0">
+                            <input type="hidden" value="2" name="pedido_extra[etiquetas][precio]">
                         </div>
                         <!--oreden-->
 
