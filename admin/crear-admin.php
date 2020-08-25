@@ -1,4 +1,5 @@
 <?php
+	require_once 'funciones/sesiones.php';
 	require_once 'funciones/funciones.php';
 	require_once 'templates/header.php';
 	require_once 'templates/barra.php';
