@@ -2,7 +2,7 @@
 
     <section class="seccion contenedor">
         <h2>Calendario de Eventos</h2>
-        <?php 
+        <?php
             try {
                 require_once('includes/funciones/db_conexion.php');
                 $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
@@ -19,7 +19,7 @@
         ?>
 
         <div class="calendario clearfix">
-            <?php 
+            <?php
                 $calendario = array();
                 while($eventos = $resultado->fetch_assoc()){
                     //Obtiene la fecha del evento
@@ -35,7 +35,7 @@
                     $calendario[$fecha][] = $evento;
                 }?>
 
-                <?php 
+                <?php
                     //Imrime todos los eventos
                     foreach ($calendario as $dia => $lista_eventos) { ?>
                         <h3>
@@ -45,7 +45,7 @@
                             //linux
                             setlocale(LC_TIME, 'es_ES.UTF-8');
                             //windows
-                            setlocale(LC_TIME, 'spanish');
+                            setlocale(LC_TIME, 'spanish.UTF-8');
                             //doy formato a la fecha
                             echo strftime("%A, %d de %B del %Y", strtotime($dia)); ?>
                         </h3>
