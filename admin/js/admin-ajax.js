@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $('#crear-admin').on('submit', function(e) {
+    $('#guardar-registro').on('submit', function(e) {
         e.preventDefault();
 
         var datos = $(this).serializeArray();
@@ -14,13 +14,13 @@ $(document).ready(function() {
                 if (resultado.respuesta == 'exito') {
                     Swal.fire(
                     '¡Correcto!',
-                    'Administrador creado correctamente.',
+                    'Se guardó correctamente.',
                     'success'
                     )
                 } else {
                     Swal.fire(
                         '¡Error!',
-                        'Error al crear el Administrador. Pruebe con otro nombre de usuario',
+                        'Hubo un error.',
                         'error'
                     )
                 }

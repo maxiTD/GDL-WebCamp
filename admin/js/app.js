@@ -22,4 +22,21 @@ $(document).ready(function() {
             search: 'Buscar: '
         }
     });
+
+    $('#crear-registro').attr('disabled', true);
+
+    //Validar que los dos campos de password coincidan
+    $('#repetir-password').on('blur', function() {
+        var password_nuevo = $('#password').val();
+
+        if ($(this).val() == password_nuevo) {
+            $('#resultado-password').parents('.form-group').addClass('has-success').removeClass('has-error');
+            $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
+            $('#crear-registro').attr('disabled', false);
+        } else {
+            $('#resultado-password').text('*los campos no coinciden.');
+            $('#resultado-password').parents('.form-group').addClass('has-error').removeClass('has-success');
+            $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
+        }
+    });
 });

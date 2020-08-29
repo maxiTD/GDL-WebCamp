@@ -25,7 +25,7 @@
 					<div class="box-header with-border">
 						<h3 class="box-title">Crear Administrador</h3>
 					</div>
-					<form role="form" name="crear-admin" id="crear-admin" method="post" action="insertar-admin.php">
+					<form role="form" name="guardar-registro" id="guardar-registro" method="post" action="modelo-admin.php">
 						<div class="box-body">
 							<div class="form-group">
 								<label for="usuario">Usuario</label>
@@ -39,11 +39,16 @@
 								<label for="password">Password</label>
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password para Iniciar Sesión">
 							</div>
+							<div class="form-group">
+								<label for="repetir-password">Repetir Password</label>
+								<input type="password" class="form-control" id="repetir-password" name="repetir-password" placeholder="Repita el Password ingresado">
+								<span id="resultado-password" class="help-block"></span>
+							</div>
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer">
-							<input type="hidden" name="agregar-admin" value="1">
-							<button type="submit" class="btn btn-primary">Añadir</button>
+							<input type="hidden" name="registro" value="nuevo">
+							<button type="submit" class="btn btn-primary" id="crear-registro">Añadir</button>
 						</div>
 					</form>
 				</div>

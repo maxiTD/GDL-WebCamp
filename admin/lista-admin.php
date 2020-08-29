@@ -1,5 +1,6 @@
 <?php
 require_once 'funciones/sesiones.php';
+require_once 'funciones/funciones.php';
 require_once 'templates/header.php';
 require_once 'templates/barra.php';
 require_once 'templates/navegacion.php';
@@ -36,7 +37,6 @@ require_once 'templates/navegacion.php';
 							<tbody>
 								<?php
 									try {
-										include_once '../includes/funciones/db_conexion.php';
 										$sql = "SELECT id_admin, usuario, nombre FROM admins";
 										$resultado = $conn->query($sql);
 										$conn->close();
