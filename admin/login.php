@@ -16,7 +16,7 @@
 	<div class="login-box-body">
 		<p class="login-box-msg">Iniciar sesion como Administrador</p>
 
-		<form role="form" name="login-admin-form" id="login-admin" method="post" action="modelo-admin.php">
+		<form role="form" name="login-admin-form" id="login-admin" method="post" action="login-admin.php">
 			<div class="form-group has-feedback">
 				<input type="text" class="form-control" name="usuario" placeholder="Usuario">
 				<span class="glyphicon glyphicon-user form-control-feedback"></span>

@@ -74,39 +74,26 @@ if ($_POST['registro'] == 'actualizar') {
     die(json_encode($respuesta));
 }
 
-if (isset($_POST['login-admin'])) {
-    $usuario = $_POST['usuario'];
-    $password = $_POST['password'];
-
-    require_once 'funciones/funciones.php';
-
+if ($_POST['registro'] == 'eliminar') {
     try {
-        $stmt = $conn->prepare("SELECT * FROM admins WHERE usuario = ? ");
-        $stmt->bind_param("s", $usuario);
+        $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ?');
+        $stmt->bind_param('i', $id_registro);
         $stmt->execute();
-        $stmt->bind_result($id_admin, $usuario_admin, $nombre_admin, $password_admin, $editado);
         if ($stmt->affected_rows) {
-            $existe = $stmt->fetch();
-            if ($existe && password_verify($password, $password_admin)) {
-                session_start();
-                $_SESSION['usuario'] = $usuario_admin;
-                $_SESSION['nombre'] = $nombre_admin;
-                $respuesta = array (
-                    'respuesta' => 'exitoso',
-                    'usuario' => $nombre_admin
-                );
-            } else {
-                $respuesta = array (
-                    'respuesta' => 'error'
-                );
-            }
+            $respuesta = array(
+                'respuesta' => 'exito',
+                'id_eliminado' => $id_registro
+            );
+        } else {
+            $respuesta = array(
+                'respuesta' => 'error'
+            );
         }
-        $stmt->close();
-        $conn->close();
     } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
+        $respuesta = array(
+            'respuesta' => $e->getMessage()
+        );
     }
     die(json_encode($respuesta));
 }
-
 ?>

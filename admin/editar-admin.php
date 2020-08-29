@@ -52,12 +52,17 @@
 								<label for="password">Password</label>
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password para Iniciar Sesión">
 							</div>
+							<div class="form-group">
+								<label for="repetir-password">Repetir Password</label>
+								<input type="password" class="form-control" id="repetir-password" name="repetir-password" placeholder="Repita el Password ingresado">
+								<span id="resultado-password" class="help-block"></span>
+							</div>
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer">
                             <input type="hidden" name="registro" value="actualizar">
 							<input type="hidden" name="id_registro" value="<?php echo $id; ?>">
-							<button type="submit" class="btn btn-primary">Actualizar</button>
+							<button id="actualizar-registro" type="submit" class="btn btn-primary">Actualizar</button>
 						</div>
 					</form>
 				</div>
