@@ -71,22 +71,29 @@
                                 </div>
                             </div>
 							<div class="form-group">
-								<label for="repetir-password">Repetir Password</label>
-								<input type="password" class="form-control" id="repetir-password" name="repetir-password" placeholder="Repita el Password ingresado">
-								<span id="resultado-password" class="help-block"></span>
-							</div>
-							<div class="form-group">
-								<label>Nivel de Privilegios</label>
-								<select id="nivel" name="nivel" class="form-control">
-									<option value="0" selected>Bajo</option>
-									<option value="1">Alto</option>
-								</select>
-                			</div>
+                                <label >Invitado o Ponente</label>
+                                <select name="invitado-evento" class="form-control select2" id="invitado-evento">
+                                    <option value="0">--Seleccione--</option>
+                                    <?php
+                                        try {
+                                            $sql = "SELECT id_invitado, nombre_invitado, apellido_invitado FROM invitados";
+                                            $resultado = $conn->query($sql);
+                                            while ($invitado = $resultado->fetch_assoc()) { ?>
+                                                <option value="<?php echo $invitado['id_invitado']; ?>">
+                                                <?php echo $invitado['nombre_invitado'] . ' ' . $invitado['apellido_invitado']; ?>
+                                                </option>
+                                            <?php }
+                                        } catch (Exception $e) {
+                                            echo "Error: " . $e->getMessage();
+                                        }
+                                    ?>
+                                </select>
+                            </div>
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer">
 							<input type="hidden" name="registro" value="nuevo">
-							<button type="submit" class="btn btn-primary" id="crear-registro">Añadir</button>
+							<button type="submit" class="btn btn-primary">Añadir</button>
 						</div>
 					</form>
 				</div>
