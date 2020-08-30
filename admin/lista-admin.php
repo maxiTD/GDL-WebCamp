@@ -31,7 +31,7 @@ require_once 'templates/navegacion.php';
 								<tr>
 									<th>Usuario</th>
 									<th>Nombre</th>
-									<th>Nivel Privilegios</th>
+									<th>Acceso</th>
 									<th>Acciones</th>
 								</tr>
 							</thead>
@@ -49,7 +49,7 @@ require_once 'templates/navegacion.php';
 										<tr>
 											<td><?php echo $admin['usuario']; ?></td>
 											<td><?php echo $admin['nombre']; ?></td>
-											<td><?php echo ($admin['nivel'] == 1) ? 'Alto' : 'Bajo' ?></td>
+											<td><?php echo ($admin['nivel'] == 1) ? 'Total' : 'Básico' ?></td>
 											<td>
 												<a href="editar-admin.php?id=<?php echo $admin['id_admin']; ?>" class="btn bg-orange btn-flat margin">
 													<i class="fa fa-pencil"></i>
@@ -65,7 +65,7 @@ require_once 'templates/navegacion.php';
 								<tr>
 									<th>Usuario</th>
 									<th>Nombre</th>
-									<th>Nivel Privilegios</th>
+									<th>Acceso</th>
 									<th>Acciones</th>
 								</tr>
 							</tfoot>

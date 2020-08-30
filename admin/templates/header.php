@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AdminLTE 2 | Blank Page</title>
+	<title>GDLWebCamp | Admin</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.7 -->
@@ -18,6 +18,10 @@
 	<!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 	<link rel="stylesheet" href="css/skins/_all-skins.min.css">
+	<!-- bootstrap datepicker -->
+	<link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+	<!-- Bootstrap time Picker -->
+	<link rel="stylesheet" href="css/bootstrap-timepicker.min.css">
 	<!-- SweetAlert2-->
 	<link rel="stylesheet" href="css/sweetalert2.min.css">
 	<link rel="stylesheet" href="css/admin.css">

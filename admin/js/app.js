@@ -39,4 +39,14 @@ $(document).ready(function() {
             $('input#password').parents('.form-group').addClass('has-error').removeClass('has-success');
         }
     });
+
+    //Date picker
+    $('#fecha-evento').datepicker({
+        autoclose: true
+    })
+
+    //Timepicker
+    $('.timepicker').timepicker({
+        showInputs: false
+    })
 });

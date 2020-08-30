@@ -45,10 +45,11 @@
 								<span id="resultado-password" class="help-block"></span>
 							</div>
 							<div class="form-group">
-								<label>Nivel de Privilegios</label>
-								<select id="nivel" name="nivel" class="form-control">
-									<option value="0" selected>Bajo</option>
-									<option value="1">Alto</option>
+								<label>Acceso</label>
+								<select id="nivel" name="nivel" class="form-control select2">
+									<option value="" selected>--Seleccione--</option>
+									<option value="0" >Básico</option>
+									<option value="1">Total</option>
 								</select>
                 			</div>
 						</div>

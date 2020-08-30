@@ -53,10 +53,11 @@
 								<input type="password" class="form-control" id="password" name="password" placeholder="Password para Iniciar Sesión">
 							</div>
 							<div class="form-group">
-								<label>Nivel de Privilegios</label>
+								<label>Acceso</label>
 								<select id="nivel" name="nivel" class="form-control">
-									<option value="0" selected'>Bajo</option>
-									<option value="1">Alto</option>
+									<option value="" selected>--Seleccione--</option>
+									<option value="0" '>Básico</option>
+									<option value="1">Total</option>
 								</select>
                 			</div>
 						</div>
