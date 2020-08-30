@@ -24,7 +24,6 @@ $(document).ready(function() {
     });
 
     $('#crear-registro').attr('disabled', true);
-    $('#actualizar-registro').attr('disabled', true);
 
     //Validar que los dos campos de password coincidan
     $('#repetir-password').on('blur', function() {
@@ -34,8 +33,6 @@ $(document).ready(function() {
             $('#resultado-password').parents('.form-group').addClass('has-success').removeClass('has-error');
             $('input#password').parents('.form-group').addClass('has-success').removeClass('has-error');
             $('#crear-registro').attr('disabled', false);
-            $('#actualizar-registro').attr('disabled', false);
-
         } else {
             $('#resultado-password').text('*los campos no coinciden.');
             $('#resultado-password').parents('.form-group').addClass('has-error').removeClass('has-success');

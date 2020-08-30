@@ -13,6 +13,7 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 var resultado = data;
+
                 if (resultado.respuesta == 'exito') {
                     Swal.fire(
                     '¡Correcto!',

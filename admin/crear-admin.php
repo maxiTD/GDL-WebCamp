@@ -44,6 +44,13 @@
 								<input type="password" class="form-control" id="repetir-password" name="repetir-password" placeholder="Repita el Password ingresado">
 								<span id="resultado-password" class="help-block"></span>
 							</div>
+							<div class="form-group">
+								<label>Nivel de Privilegios</label>
+								<select id="nivel" name="nivel" class="form-control">
+									<option value="0" selected>Bajo</option>
+									<option value="1">Alto</option>
+								</select>
+                			</div>
 						</div>
 						<!-- /.box-body -->
 						<div class="box-footer">
