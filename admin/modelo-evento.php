@@ -1,16 +1,16 @@
 <?php
 require_once 'funciones/funciones.php';
 
+$id_registro = $_POST['id_registro'];
 $titulo = $_POST['titulo-evento'];
 $id_categoria = $_POST['categoria-evento'];
 $id_invitado = $_POST['invitado-evento'];
-//fecha
+//Formatear fecha al formato Y/m/d, para que la DB lo tome correctamente
 $fecha = $_POST['fecha-evento'];
 $fecha_formateada = date('Y-m-d', strtotime($fecha));
-//hora
+//Formatear la hora al formato H:i:s, para que la DB lo tome correctamente
 $hora = $_POST['hora-evento'];
-$hora_formateada = date("H:i", strtotime($hora));
-$hora_formateada .= ":00";
+$hora_formateada = date("H:i:s", strtotime($hora));
 
 if ($_POST['registro'] == 'nuevo') {
     try {
@@ -39,30 +39,20 @@ if ($_POST['registro'] == 'nuevo') {
     die(json_encode($respuesta));
 }
 
+
 if ($_POST['registro'] == 'actualizar') {
-
     try {
-        if (empty($_POST['password'])){
-            $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, editado = NOW(), nivel = ? WHERE id_admin = ?");
-            $stmt->bind_param("ssii", $usuario, $nombre, $nivel, $id_registro);
-        } else {
-            $opciones = array (
-                'cost' => 12
-            );
-            $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-
-            $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, password = ?, editado = NOW(), nivel = ? WHERE id_admin = ?");
-            $stmt->bind_param("sssii", $usuario, $nombre, $password_hashed, $nivel, $id_registro);
-        }
+        $stmt = $conn->prepare('UPDATE eventos SET nombre_evento = ?, fecha_evento = ?, hora_evento = ?, id_cat_evento = ?, id_inv = ?, editado = NOW() WHERE evento_id = ?');
+        $stmt->bind_param('sssiii', $titulo, $fecha_formateada, $hora_formateada, $id_categoria, $id_invitado, $id_registro);
         $stmt->execute();
         if ($stmt->affected_rows) {
             $respuesta = array(
-                'respuesta' => 'exito'
+                'respuesta' => 'exito',
+                'id_actualizado' => $id_registro
             );
         } else {
             $respuesta = array(
-                'respuesta' => 'error',
-                'id_actualizado' => $stmt->insert_id
+                'respuesta' => 'error'
             );
         }
         $stmt->close();

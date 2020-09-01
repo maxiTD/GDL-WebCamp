@@ -57,7 +57,12 @@ require_once 'templates/navegacion.php';
 										<tr>
 											<td><?php echo $eventos['nombre_evento']; ?></td>
 											<td><?php echo $eventos['fecha_evento']; ?></td>
-											<td><?php echo $eventos['hora_evento']; ?></td>
+											<td><?php
+												//Formatear la hora al formato 'h:i a'
+                                                $hora = $eventos['hora_evento'];
+												$hora_formateada = date('h:i a', strtotime($hora));
+												echo $hora_formateada;
+											?></td>
 											<td><?php echo $eventos['cat_evento']; ?></td>
 											<td><?php echo $eventos['nombre_invitado'] . ' ' . $eventos['apellido_invitado']; ?></td>
 											<td>
