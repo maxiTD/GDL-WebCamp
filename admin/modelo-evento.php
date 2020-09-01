@@ -67,7 +67,7 @@ if ($_POST['registro'] == 'actualizar') {
 
 if ($_POST['registro'] == 'eliminar') {
     try {
-        $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ?');
+        $stmt = $conn->prepare('DELETE FROM eventos WHERE evento_id = ?');
         $stmt->bind_param('i', $id_registro);
         $stmt->execute();
         if ($stmt->affected_rows) {

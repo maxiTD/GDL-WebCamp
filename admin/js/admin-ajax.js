@@ -13,9 +13,6 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(data) {
                 var resultado = data;
-
-                console.log(resultado);
-
                 if (resultado.respuesta == 'exito') {
                     Swal.fire(
                     '¡Correcto!',
@@ -60,6 +57,7 @@ $(document).ready(function() {
                     url: 'modelo-'+tipo+'.php',
                     success: function(data) {
                         var resultado = JSON.parse(data);
+
                         if (resultado.respuesta == 'exito') {
                             Swal.fire(
                                 'Eliminado!',
