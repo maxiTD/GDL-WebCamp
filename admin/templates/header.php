@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+	<!-- Font Awesome IconPicker-->
+	<link rel="stylesheet" href="css/fontawesome-iconpicker.min.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="css/ionicons.min.css">
 	<!-- Theme style -->

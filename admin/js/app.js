@@ -50,4 +50,7 @@ $(document).ready(function() {
         showInputs: false
     })
 
+    //IconPicker
+    $('#icono').iconpicker();
+
 });

@@ -2,22 +2,14 @@
 
 require_once 'funciones/funciones.php';
 
-$usuario = $_POST['usuario'];
-$nombre = $_POST['nombre'];
-$password = $_POST['password'];
+$nombre = $_POST['nombre_categoria'];
+$icono = $_POST['icono'];
 $id_registro = $_POST['id_registro'];
-$nivel = $_POST['nivel'];
 
 if ($_POST['registro'] == 'nuevo') {
-
-    $opciones = array (
-        'cost' => 12
-    );
-    $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-
     try {
-        $stmt = $conn->prepare("INSERT INTO admins (usuario, nombre, password, nivel) VALUES (?, ?, ?, ?)");
-        $stmt->bind_param("sssi", $usuario, $nombre, $password_hashed, $nivel);
+        $stmt = $conn->prepare("INSERT INTO categoria_evento (cat_evento, icono) VALUES (?, ?)");
+        $stmt->bind_param("ss", $nombre, $icono);
         $stmt->execute();
         $id_registro = $stmt->insert_id;
         if ($id_registro > 0) {
@@ -27,8 +19,7 @@ if ($_POST['registro'] == 'nuevo') {
             );
         } else {
             $respuesta = array(
-                'respuesta' => 'error',
-                'id registro' => $id_registro
+                'respuesta' => 'error'
             );
         }
         $stmt->close();
@@ -43,29 +34,18 @@ if ($_POST['registro'] == 'nuevo') {
 }
 
 if ($_POST['registro'] == 'actualizar') {
-
     try {
-        if (empty($_POST['password'])){
-            $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, editado = NOW(), nivel = ? WHERE id_admin = ?");
-            $stmt->bind_param("ssii", $usuario, $nombre, $nivel, $id_registro);
-        } else {
-            $opciones = array (
-                'cost' => 12
-            );
-            $password_hashed = password_hash($password, PASSWORD_BCRYPT, $opciones);
-
-            $stmt = $conn->prepare("UPDATE admins SET usuario = ?, nombre = ?, password = ?, editado = NOW(), nivel = ? WHERE id_admin = ?");
-            $stmt->bind_param("sssii", $usuario, $nombre, $password_hashed, $nivel, $id_registro);
-        }
+        $stmt = $conn->prepare("UPDATE categoria_evento SET cat_evento = ?, icono = ?, editado = NOW() WHERE id_categoria = ?");
+        $stmt->bind_param("ssi", $nombre, $icono, $id_registro);
         $stmt->execute();
         if ($stmt->affected_rows) {
             $respuesta = array(
-                'respuesta' => 'exito'
+                'respuesta' => 'exito',
+                'id_actualizado' => $id_registro
             );
         } else {
             $respuesta = array(
-                'respuesta' => 'error',
-                'id_actualizado' => $stmt->insert_id
+                'respuesta' => 'error'
             );
         }
         $stmt->close();
@@ -80,7 +60,7 @@ if ($_POST['registro'] == 'actualizar') {
 
 if ($_POST['registro'] == 'eliminar') {
     try {
-        $stmt = $conn->prepare('DELETE FROM admins WHERE id_admin = ?');
+        $stmt = $conn->prepare('DELETE FROM categoria_evento WHERE id_categoria = ?');
         $stmt->bind_param('i', $id_registro);
         $stmt->execute();
         if ($stmt->affected_rows) {
