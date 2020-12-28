@@ -33,6 +33,43 @@ $(document).ready(function() {
         })
     });
 
+    //Guardar un registro con archivos
+    $('#guardar-registro-archivo').on('submit', function(e) {
+        e.preventDefault();
+
+        var datos = new FormData(this);
+
+        $.ajax({
+            type: $(this).attr('method'),
+            data: datos,
+            url: $(this).attr('action'),
+            dataType: 'json',
+            contentType: false,
+            processData: false,
+            async: true,
+            cache: false,
+            success: function(data) {
+                var resultado = data;
+
+                console.log(resultado);
+
+                if (resultado.respuesta == 'exito') {
+                    Swal.fire(
+                    '¡Correcto!',
+                    'Se guardó correctamente.',
+                    'success'
+                    )
+                } else {
+                    Swal.fire(
+                        '¡Error!',
+                        'Hubo un error.',
+                        'error'
+                    )
+                }
+            }
+        })
+    });
+
     //Eliminar un registro
     $('.borrar-registro').on('click', function(e) {
         e.preventDefault();
