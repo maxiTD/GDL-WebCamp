@@ -1009,6 +1009,10 @@ h4 {
 	font-weight: bold;
 }
 
+.contenido-dia .autor {
+	font-size: 14px;
+	color: #868686;
+}
 
 /** Resumen Registro **/
 
