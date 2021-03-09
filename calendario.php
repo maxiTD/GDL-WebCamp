@@ -53,7 +53,7 @@
                             <div class="dia">
                                 <p class="titulo"> <?php echo $evento['titulo']; ?> </p>
                                 <p class="hora"><i class="fa fa-clock" aria-hidden="true"></i>
-                                <?php echo $evento['fecha'] . " " . $evento['hora']; ?> </p>
+                                <?php echo strftime("%d-%m-%Y", strtotime($evento['fecha'])) . " " . $evento['hora']; ?> </p>
                                 <p><i class="fa <?php echo $evento['icono']; ?> "></i>
                                 <?php echo $evento['categoria']; ?> </p>
                                 <p><i class="fa fa-user"></i> <?php echo $evento['invitado']; ?> </p>

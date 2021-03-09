@@ -24,6 +24,8 @@
 <script src="js/bootstrap-timepicker.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="js/sweetalert2.all.min.js"></script>
+<!-- iCheck -->
+<script src="js/icheck.min.js"></script>
 <script src="js/admin-ajax.js"></script>
 <script src="js/jquery.dataTables.min.js"></script>
 <script src="js/dataTables.bootstrap.min.js"></script>
@@ -33,6 +35,8 @@
 <script src="js/fontawesome-iconpicker.min.js"></script>
 <script src="js/login-ajax.js"></script>
 <script src="js/app.js"></script>
+<script src="js/cotizador.js"></script>
+
 </body>
 
 </html>

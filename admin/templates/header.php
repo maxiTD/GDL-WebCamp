@@ -15,6 +15,8 @@
 	<link rel="stylesheet" href="css/fontawesome-iconpicker.min.css">
 	<!-- Ionicons -->
 	<link rel="stylesheet" href="css/ionicons.min.css">
+	<!-- ICheck -->
+	<link rel="stylesheet" href="css/iCheck/all.css">
 	<!-- Theme style -->
 	<link rel="stylesheet" href="css/AdminLTE.min.css">
 	<!-- AdminLTE Skins. Choose a skin from the css/skins

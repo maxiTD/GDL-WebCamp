@@ -23,7 +23,7 @@
             <div id="paquetes" class="paquetes">
                 <h3>Elige el número de boletos</h3>
 
-                <ul class="lista-precios">
+                <ul class="lista-precios clearfix">
                     <li>
                         <div class="tabla-precio">
                             <h3>Pase por día (Viernes)</h3>
@@ -197,6 +197,7 @@
 
                         </div>
                         <input type="hidden" name="total_pedido" id="total_pedido">
+                        <input type="hidden" name="total_descuento" id="total_descuento">
                         <input type="submit" id="btnRegistro" name="submit" class="boton" value="Pagar">
                     </div>
                     <!--total-->

@@ -53,4 +53,10 @@ $(document).ready(function() {
     //IconPicker
     $('#icono').iconpicker();
 
+    //Flat red color scheme for iCheck
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+        checkboxClass: 'icheckbox_flat-blue',
+        radioClass   : 'iradio_flat-blue'
+      })
+
 });

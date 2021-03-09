@@ -23,7 +23,7 @@
 			<div class="contenedor">
 				<div class="programa-evento">
 					<h2>Programa del Evento</h2>
-					<?php 
+					<?php
 						try {
 							require_once('includes/funciones/db_conexion.php');
 							$sql = "SELECT * FROM `categoria_evento` ";
@@ -86,7 +86,7 @@
 									<div class="detalle-evento">
 										<h3><?php echo $evento['nombre_evento']; ?></h3>
 										<p><i class="far fa-clock"></i> <?php echo $evento['hora_evento']; ?></p>
-										<p><i class="far fa-calendar-alt"></i> <?php echo $evento['fecha_evento']; ?></p>
+										<p><i class="far fa-calendar-alt"></i> <?php echo date('d-m-Y', strtotime($evento['fecha_evento'])); ?></p>
 										<p><i class="fas fa-user"></i> <?php echo $evento['nombre_invitado'] . " " . $evento['apellido_invitado']; ?></p>
 									</div>
 
@@ -113,10 +113,10 @@
 	<div class="contador parallax">
 		<div class="contenedor">
 			<ul class="resumen-evento clearfix">
-				<li><p class="numero"></p>Invitados</li>
-				<li><p class="numero"></p>Talleres</li>
-				<li><p class="numero"></p>Días</li>
-				<li><p class="numero"></p>Conferencias</li>
+				<li><p class="numero">0</p>Invitados</li>
+				<li><p class="numero">0</p>Talleres</li>
+				<li><p class="numero">0</p>Días</li>
+				<li><p class="numero">0</p>Conferencias</li>
 			</ul>
 		</div>
 	</div>

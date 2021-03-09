@@ -66,7 +66,7 @@ require_once 'templates/navegacion.php';
                                             <td><?php
 												//Formatear la fecha y hora al formato 'aaaa-mm-dd hh:mm am/pm'
                                                 $fecha = $registrado['fecha_registro'];
-												$fecha_formateada = date('Y-m-d h:i a', strtotime($fecha));
+												$fecha_formateada = date('d-m-Y H:i', strtotime($fecha));
 												echo $fecha_formateada;
                                             ?></td>
                                             <td>
@@ -83,7 +83,13 @@ require_once 'templates/navegacion.php';
                                                     );
 
                                                     foreach($articulos as $llave => $articulo) {
-                                                        echo $arrego_articulos[$llave] . ":" . " " . $articulo . "<br>";
+                                                        if(array_key_exists('cantidad', $articulo)) {
+                                                            if($articulo['cantidad'] != "") {
+                                                                echo $arrego_articulos[$llave] . ":" . " " . $articulo['cantidad'] . "<br>";
+                                                            }
+                                                        } else {
+                                                            echo $arrego_articulos[$llave] . ":" . " " . $articulo . "<br>";
+                                                        }
                                                     }
                                                 ?>
                                             </td>
@@ -94,11 +100,12 @@ require_once 'templates/navegacion.php';
                                                     $talleres = json_decode($eventos_resultado, true);
                                                     $talleres = implode("', '", $talleres['eventos']);
 
-                                                    $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE clave IN ('$talleres')";
+                                                    $sql_talleres = "SELECT nombre_evento, fecha_evento, hora_evento FROM eventos WHERE evento_id IN ('$talleres')";
+
                                                     $resultado_talleres = $conn->query($sql_talleres);
 
                                                     while ($eventos = $resultado_talleres->fetch_assoc()){
-                                                        echo $eventos['nombre_evento'] . " " . $eventos['fecha_evento'] . " " . $eventos['hora_evento'] . "<br>";
+                                                        echo $eventos['nombre_evento'] . " " . date('d-m-Y', strtotime($eventos['fecha_evento'])) . " " . $eventos['hora_evento'] . "<br>";
                                                     }
                                                     ?>
                                                 </td>

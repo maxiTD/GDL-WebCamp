@@ -9,7 +9,7 @@
 		</p>
 	</section>
     <!--seccion-->
-    
+
     <section class="seccion contenedor">
         <h2>Galería de Fotos</h2>
         <div class="galeria">

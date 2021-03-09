@@ -87,11 +87,13 @@
             $pagina = str_replace(".php", "", $archivo);
             if ($pagina == 'invitados' || $pagina == 'index'){
                 echo '<script src="js/jquery.colorbox-min.js"></script>';
+                echo '<script src="js/jquery.waypoints.min.js"></script>';
             } else if ($pagina == 'conferencia'){
                 echo '<script src="js/lightbox.js"></script>';
             }
 	    ?>
         <script src="js/main.js"></script>
+        <script src="js/cotizador.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
