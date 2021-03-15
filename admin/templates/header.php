@@ -28,6 +28,8 @@
 	<link rel="stylesheet" href="css/bootstrap-timepicker.min.css">
 	<!-- SweetAlert2-->
 	<link rel="stylesheet" href="css/sweetalert2.min.css">
+	<!-- Morris charts -->
+	<link rel="stylesheet" href="css/morris.css">
 	<link rel="stylesheet" href="css/admin.css">
 	<link rel="stylesheet" href="css/dataTables.bootstrap.min.css">
 
